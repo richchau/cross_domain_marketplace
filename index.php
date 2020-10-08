@@ -18,12 +18,13 @@
       <nav>
         <ul>
           <li>
-            <a href="index.html">hO<sup>2</sup>me</a>
+            <a href="index.php">hO<sup>2</sup>me</a>
           </li>
-          <li><a href="about.html">abO<sup>2</sup>ut</a></li>
-          <li><a href="products.html">prO<sup>2</sup>ducts</a></li>
-          <li><a href="news.html">N<sup>2</sup>ews</a></li>
-          <li><a href="contacts.html">cO<sup>2</sup>ntacts</a></li>
+          <li><a href="">abO<sup>2</sup>ut</a></li>
+          <li><a href="">prO<sup>2</sup>ducts</a></li>
+          <li><a href="">N<sup>2</sup>ews</a></li>
+          <li><a href="">cO<sup>2</sup>ntacts</a></li>
+          <li><a href="loginPage.php">lo<sup>2</sup>gin</a></li>
         </ul>
       </nav>
     </div>
