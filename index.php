@@ -25,6 +25,7 @@
           <li><a href="">N<sup>2</sup>ews</a></li>
           <li><a href="">cO<sup>2</sup>ntacts</a></li>
           <li><a href="loginPage.php">lo<sup>2</sup>gin</a></li>
+          <li><a href="usersSqlPage.php">users</a></li>
         </ul>
       </nav>
     </div>
