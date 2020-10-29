@@ -83,6 +83,7 @@
         </p>
       </div>
       <a href="productsPage.php"> <button>View All Products</button></a>
+      <a href="topProductsPage.php"> <button>Recently Viewed Products</button></a>
     </div>
   </section>
 
@@ -114,10 +115,6 @@
     </div>
   </section>
 
-
-  <?php
-  echo ($_COOKIE["count_breeze"]);
-  ?>
 </body>
 
 

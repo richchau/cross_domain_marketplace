@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 
 <?php
-if (!isset($_COOKIE['count_breeze'])) {
-    $cookie = 1;
+if (!isset($_COOKIE['viewed_products'])) {
+    $cookie = 'Oxy Breeze,';
     $expire = time() + 3600;
-    setcookie("count_breeze", $cookie, $expire, "/", "https://o2-heroku.herokuapp.com/");
+    setcookie("viewed_products", $cookie, $expire, '/');
 } else {
-    $cookie = ++$_COOKIE['count_breeze'];
-    setcookie("count_breeze", $cookie);
+    $cookie = $_COOKIE['viewed_products'] . "Oxy Breeze,";
+    $expire = time() + 3600;
+    setcookie("viewed_products", $cookie, $expire, '/');
 }
+
+print_r($_COOKIE);
+
 ?>
 
 <html lang="en">
