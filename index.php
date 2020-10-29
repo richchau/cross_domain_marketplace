@@ -82,6 +82,7 @@
           your lungs with warmth from the desert air.
         </p>
       </div>
+      <a href="productsPage.php"> <button>View All Products</button></a>
     </div>
   </section>
 
@@ -109,9 +110,15 @@
   <section id="contacts">
     <div class="container">
       <h1>Contacts</h1>
-      <?php require('./php/contacts.php') ?>
+      <?php require('./php/contacts.php'); ?>
     </div>
   </section>
+
+
+  <?php
+  echo ($_COOKIE["count_breeze"]);
+  ?>
 </body>
+
 
 </html>
