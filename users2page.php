@@ -10,16 +10,16 @@
 <body>
     <?php
 
-    /*
+
     $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-        $server = $url["host"];
-        $username = $url["user"];
-        $password = $url["pass"];
-        $db = substr($url["path"], 1);
+    $server = $url["host"];
+    $username = $url["user"];
+    $password = $url["pass"];
+    $db = substr($url["path"], 1);
 
-    */
 
-    $conn = mysqli_connect("localhost", "root", "root", "usersdb");
+    $conn = mysqli_connect($server, $username, $password, $db);
+    //$conn = mysqli_connect("localhost", "root", "root", "usersdb");
 
     if ($conn->connect_error) {
         die("Connection failed:" . $conn->connect_error);
@@ -28,6 +28,7 @@
 
     $query = "SELECT * FROM users";
     $result = $conn->query($query);
+
     $rows = array();
 
     while ($r = mysqli_fetch_assoc($result)) {
