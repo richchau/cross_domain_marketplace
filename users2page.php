@@ -46,6 +46,8 @@
     } else {
         echo "ERROR: Could not able to execute $query. " . mysqli_error($conn);
     }
+
+    $conn->close();
     ?>
 </body>
 
