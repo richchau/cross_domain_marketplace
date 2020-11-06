@@ -53,6 +53,9 @@ if (isset($_POST['FindUser'])) {
     <input type="submit" name="FindUser" value="Find User">
 </form>
 
+</br>
+<a href="allUsersPage.php"> <button>View All Users</button></a>
+
 <body>
 
 </body>
