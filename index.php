@@ -24,8 +24,8 @@
           <li><a href="">prO<sup>2</sup>ducts</a></li>
           <li><a href="">N<sup>2</sup>ews</a></li>
           <li><a href="">cO<sup>2</sup>ntacts</a></li>
-          <li><a href="loginPage.php">lo<sup>2</sup>gin</a></li>
-          <li><a href="usersSqlPage.php">users</a></li>
+          <!-- <li><a href="loginPage.php">lo<sup>2</sup>gin</a></li>
+          <li><a href="usersSqlPage.php">users</a></li> -->
         </ul>
       </nav>
     </div>
@@ -62,7 +62,7 @@
         <h2>Oxy Chill</h2>
         <img src="./img/DiskoBayGreenland.jpg" alt="" srcset="" />
         <p>
-          Inhale oxygen from the cold waters of Disko Bay, Greenland to cool
+          Inhale oxygen from the cold environment of Yellowstone National Park to cool
           down your body, giving a sharp sensation best for recovery.
         </p>
       </div>
@@ -82,8 +82,8 @@
           your lungs with warmth from the desert air.
         </p>
       </div>
-      <a href="productsPage.php"> <button>View All Products</button></a>
-      <a href="topProductsPage.php"> <button>Recently Viewed Products</button></a>
+      <a href=""> <button>View All Products</button></a>
+      <a href=""> <button>Recently Viewed Products</button></a>
     </div>
   </section>
 
