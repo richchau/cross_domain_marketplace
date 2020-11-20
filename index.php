@@ -21,7 +21,7 @@
             <a href="index.php">hO<sup>2</sup>me</a>
           </li>
           <li><a href="">abO<sup>2</sup>ut</a></li>
-          <li><a href="">prO<sup>2</sup>ducts</a></li>
+          <li><a href="productsPage.php">prO<sup>2</sup>ducts</a></li>
           <li><a href="">N<sup>2</sup>ews</a></li>
           <li><a href="">cO<sup>2</sup>ntacts</a></li>
           <!-- <li><a href="loginPage.php">lo<sup>2</sup>gin</a></li>
@@ -82,8 +82,8 @@
           your lungs with warmth from the desert air.
         </p>
       </div>
-      <a href=""> <button>View All Products</button></a>
-      <a href=""> <button>Recently Viewed Products</button></a>
+      <a href="productsPage.php"> <button>View All Products</button></a>
+      <!-- <a href=""> <button>Recently Viewed Products</button></a> -->
     </div>
   </section>
 

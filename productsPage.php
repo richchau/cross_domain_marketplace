@@ -5,36 +5,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
+    <script src="https://kit.fontawesome.com/26e7b01587.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+        .grid-container {
+            /* display: inline-grid;
+            grid-template-columns: auto auto; */
+        }
+
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="container">
+        <div class="grid-container">
+            <?php
 
-    <?php
+            include("dbconfig.php");
+            include("starsComponent.php");
 
-    include("dbconfig.php");
+            $sql = "SELECT * FROM products";
+            $query = mysqli_query($conn, $sql);
 
-    $sql = "SELECT * FROM products";
-    $query = mysqli_query($conn, $sql);
+            while ($row = mysqli_fetch_assoc($query)) {
 
-    while ($row = mysqli_fetch_assoc($query)) {
-
-        echo '<div> 
-                <div>
-                    ' . $row["name"] . '
+                echo '<div class="card"> 
+                <img src="/img/' . $row["image"] . '">
+                <div class="card-container">
+                    <h4>' . $row["name"] . ' </h4>
+                    <p>$' . $row["pricing"] . '</p>
                 </div>
-                <div>
-                    ' . $row["description"] . '
-                </div>
-                <div>
-                    ' . $row["pricing"] . '
-                </div>
-                <a href="detailPage.php?value=' . $row["product_id"] . '">click me</a>
+                <div>';
+
+                displayStars($row["product_rating"]);
+
+                echo '</div>
+                <a href="detailPage.php?value=' . $row["product_id"] . '">View</a>
             </div>
             </br>';
-    }
+            }
 
 
-    ?>
+            ?>
+        </div>
+    </div>
 
 </body>
 
