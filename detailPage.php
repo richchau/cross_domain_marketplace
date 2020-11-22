@@ -6,23 +6,15 @@ include("dbconfig.php");
 // Stars Component
 include("starsComponent.php");
 
+// Mysql update page view count on database
+$sql_view_count = 'UPDATE products SET view_count = view_count + 1 WHERE product_id =' . $_GET["value"];
+mysqli_query($conn, $sql_view_count);
+
 // Mysql query for product
 $sql1 = 'SELECT * FROM products WHERE product_id = ' . $_GET["value"] . '';
 $query1 = mysqli_query($conn, $sql1);
 $products = mysqli_fetch_assoc($query1);
 
-// // User page view count
-// if (!isset($_COOKIE["count_id_" . $row["product_id"]])) {
-//     $count = 1;
-//     setcookie("count_id_" . $row["product_id"], $count);
-// } else {
-//     $count = ++$_COOKIE["count_id_" . $row["product_id"]];
-//     setcookie("count_id_" . $row["product_id"], $count);
-// }
-
-// Add to recently viewed queue
-// Create viewed products cookie if not exist and add this page
-//unset($_COOKIE["viewed_products"]);
 if (!isset($_COOKIE["viewed_products"])) {
     $arr = array();
     array_push($arr, $products["product_id"]);

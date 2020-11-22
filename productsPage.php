@@ -24,6 +24,9 @@
 </head>
 
 <body>
+    <header>
+        <?php include("navBarComponent.php") ?>
+    </header>
     <div class="container">
         <div class="grid-container">
             <?php
