@@ -1,5 +1,5 @@
-<div class="container">
-    <div id="branding">
+<div>
+    <div>
         <h1>O2</h1>
     </div>
     <nav>
@@ -12,8 +12,6 @@
             <li><a href="index.php#news">N<sup>2</sup>ews</a></li>
             <li><a href="index.php#contacts">cO<sup>2</sup>ntacts</a></li>
             <li><a href="http://potato-katie.com/marketplace.php"><b>Back to marketplace</b></a></li>
-            <!-- <li><a href="loginPage.php">lo<sup>2</sup>gin</a></li>
-          <li><a href="usersSqlPage.php">users</a></li> -->
         </ul>
     </nav>
 </div>
