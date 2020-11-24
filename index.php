@@ -10,7 +10,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-  <link href="style.css" rel="stylesheet">
+  <link href="./css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -31,7 +31,7 @@
             <a href="#" class="nav-link">abO<sup>2</sup>ut</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">prO<sup>2</sup>ducts</a>
+            <a href="productsPage.php" class="nav-link">prO<sup>2</sup>ducts</a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">N<sup>2</sup>ews</a>
@@ -40,7 +40,7 @@
             <a href="#" class="nav-link">cO<sup>2</sup>ntact</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">Marketplace</a>
+            <a href="http://potato-katie.com/marketplace.php" class="nav-link">Marketplace</a>
           </li>
         </ul>
       </div>
@@ -60,7 +60,7 @@
         <div class="carousel-caption">
           <h1 class="display-2"><b>O2</b></h1>
           <h2>Breath of Fresh Air</h2>
-          <button type=button class='btn btn-outline-light btn-lg'>View Products</button>
+          <a href="productsPage.php"><button type=button class='btn btn-outline-light btn-lg'>View Products</button></a>
         </div>
       </div>
       <div class="carousel-item">
@@ -72,6 +72,10 @@
       </div>
       <div class="carousel-item">
         <img src="/img/showcase2.jpg" alt="">
+        <div class="carousel-caption">
+          <h2>Over 10 different oxygens from across the globe</h2>
+          <a href="productsPage.php"><button type=button class='btn btn-outline-light btn-lg'>View Products</button></a>
+        </div>
       </div>
     </div>
   </div>
@@ -85,7 +89,7 @@
         </p>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
-        <a href="#"><button type="button" class="btn btn-outline-secondary btn-lg">Marketplace</button></a>
+        <a href="http://potato-katie.com/marketplace.php"><button type="button" class="btn btn-outline-secondary btn-lg">Marketplace</button></a>
       </div>
     </div>
   </div>
@@ -114,61 +118,110 @@
 
   <!-- Products Section -->
   <div class="container-fluid padding">
-    <div class="row text-center padding">
+    <div class="row products text-center padding">
       <div class="col-12">
-        <h1 class="display-4">
+        <h1>
           Our Products
         </h1>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4">
-        <img style="max-width: 250px;" src="/img/fresh.jpg" alt="">
+        <img src="/img/fresh.jpg" alt="">
         <h3>Oxy Fresh</h3>
         <p>Treat yourself with the refreshing oxygen from Banff National Park
           in Canada to relax your body.</p>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4">
-        <img style="max-width: 250px;" src="/img/icy.jpg" alt="">
+        <img src="/img/icy.jpg" alt="">
         <h3>Oxy Icy</h3>
         <p> Brrrr! Our air from the glaciers of Greenland will instantly wake you up.</p>
       </div>
       <div class="col-xs-12 col-md-4">
-        <img style="max-width: 250px;" src="/img/mist.jpg" alt="">
+        <img src="/img/mist.jpg" alt="">
         <h3>Oxy Mist</h3>
         <p> Breath in the cool mist from the forests of Northern California,
           and feel the wet air fill your lungs.</p>
+      </div>
+      <div class="col-12">
+        <a href="productsPage.php"><button type="button" class="btn btn-primary btn-lg">View More Products</button></a>
       </div>
     </div>
     <hr class="my-4">
   </div>
 
-
-  <section>
-    <div>
-      <h1>News</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac
-        bibendum felis. Donec lobortis tortor auctor, malesuada quam
-        ullamcorper, maximus felis. Sed eu ornare magna, et varius leo. In
-        euismod dui neque, eu interdum lacus viverra a. Ut id tellus
-        condimentum, ultricies turpis vel, sagittis lectus. Curabitur volutpat
-        sed lectus in placerat. Aenean pharetra mauris dui, vel ultrices elit
-        interdum in. Cras congue accumsan metus. Nulla euismod vel elit et
-        sollicitudin. Maecenas libero justo, ullamcorper vitae ligula quis,
-        ornare feugiat justo. Nam ullamcorper molestie gravida. Morbi interdum
-        eros eget congue aliquet. Nam finibus felis vel nulla rutrum, vitae
-        condimentum nisl tristique. Cras ullamcorper vitae lectus ac posuere.
-        Vestibulum eu ligula ipsum.
-      </p>
-      <h4><a href="">More of the latest news</a></h4>
+  <!-- News Section -->
+  <div class="container-fluid padding">
+    <div class="row news text-center padding">
+      <div class="col-12">
+        <h1>
+          News
+        </h1>
+      </div>
+      <div class="col-12">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac
+          bibendum felis. Donec lobortis tortor auctor, malesuada quam
+          ullamcorper, maximus felis. Sed eu ornare magna, et varius leo. In
+          euismod dui neque, eu interdum lacus viverra a. Ut id tellus
+          condimentum, ultricies turpis vel, sagittis lectus. Curabitur volutpat
+          sed lectus in placerat. Aenean pharetra mauris dui, vel ultrices elit
+          interdum in. Cras congue accumsan metus. Nulla euismod vel elit et
+          sollicitudin. Maecenas libero justo, ullamcorper vitae ligula quis,
+          ornare feugiat justo. Nam ullamcorper molestie gravida. Morbi interdum
+          eros eget congue aliquet. Nam finibus felis vel nulla rutrum, vitae
+          condimentum nisl tristique. Cras ullamcorper vitae lectus ac posuere.
+          Vestibulum eu ligula ipsum.</p>
+      </div>
+      <div class="col-12">
+        <a href="#"><button type="button" class="btn btn-outline-secondary btn-lg">Latest News</button></a>
+      </div>
     </div>
-  </section>
+  </div>
 
-  <section>
-    <div>
-      <h1>Contacts</h1>
-      <?php require('./php/contacts.php'); ?>
+  <footer>
+    <div class="container-fluid padding">
+      <div class="row text-center">
+        <div class="col-md-4">
+          <img style="max-width: 150px; filter:brightness(85%);" src="img/o2-logo.png" alt="">
+          <hr class="light">
+          <?php
+          $fh = fopen('contacts.txt', 'r');
+          while ($line = fgets($fh)) {
+            list($email, $phone, $street, $city, $state, $zip) = preg_split("/\,/", $line);
+            echo ("<p>$phone</p>");
+            echo ("<p>$email</p>");
+            echo ("<p>$street</p>");
+            echo ("<p>$city, $state, $zip</p>");
+          }
+          fclose($fh); ?>
+        </div>
+
+        <div class="col-md-4">
+          <hr class="light">
+          <h5>Our hours</h5>
+          <hr class="light">
+          <p>Mon-Fri: 8am - 6pm</p>
+          <p>Sat & Sun: Closed</p>
+        </div>
+
+        <div class="col-md-4">
+          <hr class="light">
+          <h5>Menu</h5>
+          <hr class="light">
+          <p><a href="#">Home</a></p>
+          <p><a href="#">About</a></p>
+          <p><a href="productsPage.php">Products</a></p>
+          <p><a href="#">News</a></p>
+          <p><a href="#">Contact</a></p>
+          <p><a href="#">Marketplace</a></p>
+        </div>
+
+        <div class="col-12">
+          <hr class="light-100">
+          <h5>&copy; o2-heroku.herokuapp.com</h5>
+        </div>
+
+      </div>
     </div>
-  </section>
+  </footer>
 
 </body>
 
