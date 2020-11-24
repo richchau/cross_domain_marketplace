@@ -1,12 +1,15 @@
-<?php 
+<script src="https://kit.fontawesome.com/26e7b01587.js" crossorigin="anonymous"></script>
 
-function displayStars($productRating){ 
+<?php
+
+function displayStars($productRating)
+{
     if ($productRating == NULL) {
         $starNumber = 0;
     } else {
         $starNumber = $productRating;
     }
-    
+
     for ($x = 0; $x < 5; $x++) {
         if (floor($starNumber) - $x >= 1) {
             echo '<span style="color: orange;">

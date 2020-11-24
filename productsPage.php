@@ -6,8 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
     <script src="https://kit.fontawesome.com/26e7b01587.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <link rel="stylesheet" href="./css/style.css" />
-    <style>
+    <!-- <style>
         .grid-container {
             /* display: inline-grid;
             grid-template-columns: auto auto; */
@@ -20,15 +25,55 @@
             margin-right: auto;
             width: 50%;
         }
-    </style>
+    </style> -->
 </head>
 
 <body>
-    <header>
-        <?php include("navBarComponent.php") ?>
-    </header>
-    <div class="container">
-        <div class="grid-container">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href='#'><img style="max-width: 150px; filter:brightness(85%);" src="img/o2-logo.png"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="index.php" class="nav-link">hO<sup>2</sup>me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">abO<sup>2</sup>ut</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="productsPage.php" class="nav-link">prO<sup>2</sup>ducts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">N<sup>2</sup>ews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">cO<sup>2</sup>ntact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="http://potato-katie.com/marketplace.php" class="nav-link">Marketplace</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Products -->
+    <div class="container-fluid padding">
+        <div class="row welcome text-center">
+            <div class="col-12">
+                <h1 class="display-4">Products</h1>
+            </div>
+            <hr>
+        </div>
+    </div>
+
+    <!-- Product Cards -->
+    <div class="container-fluid padding">
+        <div class="row padding">
             <?php
 
             include("dbconfig.php");
@@ -39,23 +84,18 @@
 
             while ($row = mysqli_fetch_assoc($query)) {
 
-                echo '<div class="card"> 
-                <img src="/img/' . $row["image"] . '">
-                <div class="card-container">
-                    <h4>' . $row["name"] . ' </h4>
-                    <p>$' . $row["pricing"] . '</p>
-                </div>
-                <div>';
-
-                displayStars($row["product_rating"]);
-
-                echo '</div>
-                <a href="detailPage.php?value=' . $row["product_id"] . '">View</a>
-            </div>
-            </br>';
+                echo '<div class="col-md-4">
+                        <div class="card">
+                          <img class="card-img-top" src="/img/' . $row["image"] . '">
+                          <div class="card-body">
+                            <h4 class="card-title">' . $row["name"] . ' </h4>
+                            ' . displayStars($row["product_rating"]) . '
+                            <p class="card-text">$' . $row["pricing"] . '</p>
+                            <a href="detailPage.php?value=' . $row["product_id"] . '" class="btn btn-outline-secondary">View Item</a>
+                          </div>
+                        </div>
+                      </div>';
             }
-
-
             ?>
         </div>
     </div>
