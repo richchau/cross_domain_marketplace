@@ -1,4 +1,3 @@
-<script src="https://kit.fontawesome.com/26e7b01587.js" crossorigin="anonymous"></script>
 
 <?php
 
@@ -17,12 +16,13 @@ function displayStars($productRating)
                     </span>';
         } elseif ($starNumber - $x > 0) {
             echo '<span style="color: orange;">
-            <i class="fa fa-star-half-alt"></i>
-            </span>';
+                <i class="fas fa-star-half"></i>
+                </span>';
         } else {
-            echo '<span style="color: orange;">
-            <i class="far fa-star"></i>
-            </span>';
+            // echo '<span style="color: orange;">
+            // <i class="far fa-star"></i>
+            // </span>';
+            echo " ";
         }
     }
 }

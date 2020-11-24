@@ -93,7 +93,7 @@ if (isset($_POST['AddReview'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Details</title>
-    <script src="https://kit.fontawesome.com/26e7b01587.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/f99fe1a433.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/detailPage.css" />
 </head>
 
