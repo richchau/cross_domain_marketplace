@@ -14,8 +14,8 @@ function getCURLdata($query)
     foreach ($rows as $row) {
         $arr = array();
         $arr['product_name'] = $row['name'];
-        $arr['image_url'] = $_SERVER['SERVER_NAME'] . '/img/' . $row['image'];
-        $arr['product_details_url'] = $_SERVER['SERVER_NAME'] . '/detailPage.php?value=' . $row['product_id'];
+        $arr['image_url'] = 'https://' . $_SERVER['SERVER_NAME'] . '/img/' . $row['image'];
+        $arr['product_details_url'] = 'https://' . $_SERVER['SERVER_NAME'] . '/detailPage.php?value=' . $row['product_id'];
         $arr['price'] = $row['pricing'];
         $arr['avg_rating'] = $row['product_rating'];
         if (array_key_exists('view_count', $row)) {
