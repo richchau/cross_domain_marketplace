@@ -1,3 +1,5 @@
+<?php session_start() ?>
+
 <?php
 
 // Database configuration
@@ -49,7 +51,7 @@ if (!isset($_COOKIE["viewed_products"])) {
 if (isset($_POST['AddReview'])) {
 
     // Insert into ratings database
-    $user_name = mysqli_real_escape_string($conn, $_POST['user_name']);
+    $user_name = mysqli_real_escape_string($conn, $_SESSION["usersuid"]);
     $comment = mysqli_real_escape_string($conn, $_POST['comment']);
     $rating = mysqli_real_escape_string($conn, $_POST['rate']);
     $product_id = $_GET["value"];
@@ -94,10 +96,19 @@ if (isset($_POST['AddReview'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Details</title>
     <script src="https://kit.fontawesome.com/f99fe1a433.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/detailPage.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link rel="stylesheet" href="./css/style.css" />
 </head>
 
 <body>
+
+    <!-- Navigation -->
+    <?php include('navComponent.php') ?>
+
 
     <div class="container">
         <form action="productsPage.php">
@@ -125,30 +136,33 @@ if (isset($_POST['AddReview'])) {
         </div>
         </br>
         <!-- Reviews component -->
-        <div>
-            <form action="" method="post" enctype="multipart/form-data">
-                <div class="rate">
-                    <input type="radio" id="star5" name="rate" value="5" />
-                    <label for="star5" title="text">5 stars</label>
-                    <input type="radio" id="star4" name="rate" value="4" />
-                    <label for="star4" title="text">4 stars</label>
-                    <input type="radio" id="star3" name="rate" value="3" />
-                    <label for="star3" title="text">3 stars</label>
-                    <input type="radio" id="star2" name="rate" value="2" />
-                    <label for="star2" title="text">2 stars</label>
-                    <input type="radio" id="star1" name="rate" value="1" />
-                    <label for="star1" title="text">1 star</label>
-                </div>
-                <div>
-                    Name: <br />
-                    <input type="text" name="user_name"><br />
-                    Comment: <br />
-                    <input type="text" name="comment" style="width: 300px"><br />
-                    <input type="submit" name="AddReview" value="Post Review">
-                </div>
-            </form>
-        </div>
-        </br>
+        <?php
+        if (isset($_SESSION["usersuid"])) {
+            echo '<div>
+                <form action="" method="post" enctype="multipart/form-data">
+                    <div class="rate">
+                        <input type="radio" id="star5" name="rate" value="5" />
+                        <label for="star5" title="text">5 stars</label>
+                        <input type="radio" id="star4" name="rate" value="4" />
+                        <label for="star4" title="text">4 stars</label>
+                        <input type="radio" id="star3" name="rate" value="3" />
+                        <label for="star3" title="text">3 stars</label>
+                        <input type="radio" id="star2" name="rate" value="2" />
+                        <label for="star2" title="text">2 stars</label>
+                        <input type="radio" id="star1" name="rate" value="1" />
+                        <label for="star1" title="text">1 star</label>
+                    </div>
+                    <div>
+                        Comment: <br />
+                        <input type="text" name="comment" style="width: 300px"><br />
+                        <input type="submit" name="AddReview" value="Post Review">
+                    </div>
+                </form>
+            </div>';
+        }
+        ?>
+
+        <hr>
 
         <!-- Display reviews -->
         <div>
@@ -175,6 +189,8 @@ if (isset($_POST['AddReview'])) {
         include("recentlyViewed.php");
         ?>
     </div>
+
+    <?php include('footerComponent.php'); ?>
 </body>
 
 </html>

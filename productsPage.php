@@ -1,3 +1,5 @@
+<?php session_start() ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,36 +32,7 @@
 
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href='#'><img style="max-width: 150px; filter:brightness(85%);" src="img/o2-logo.png"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="index.php" class="nav-link">hO<sup>2</sup>me</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">abO<sup>2</sup>ut</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a href="productsPage.php" class="nav-link">prO<sup>2</sup>ducts</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">N<sup>2</sup>ews</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">cO<sup>2</sup>ntact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="http://potato-katie.com/marketplace.php" class="nav-link">Marketplace</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <?php include('navComponent.php') ?>
 
     <!-- Products -->
     <div class="container-fluid padding">
@@ -100,52 +73,7 @@
         </div>
     </div>
 
-    <footer>
-        <div class="container-fluid padding">
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <img style="max-width: 150px; filter:brightness(85%);" src="img/o2-logo.png" alt="">
-                    <hr class="light">
-                    <?php
-                    $fh = fopen('contacts.txt', 'r');
-                    while ($line = fgets($fh)) {
-                        list($email, $phone, $street, $city, $state, $zip) = preg_split("/\,/", $line);
-                        echo ("<p>$phone</p>");
-                        echo ("<p>$email</p>");
-                        echo ("<p>$street</p>");
-                        echo ("<p>$city, $state, $zip</p>");
-                    }
-                    fclose($fh); ?>
-                </div>
-
-                <div class="col-md-4">
-                    <hr class="light">
-                    <h5>Our hours</h5>
-                    <hr class="light">
-                    <p>Mon-Fri: 8am - 6pm</p>
-                    <p>Sat & Sun: Closed</p>
-                </div>
-
-                <div class="col-md-4">
-                    <hr class="light">
-                    <h5>Menu</h5>
-                    <hr class="light">
-                    <p><a href="#">Home</a></p>
-                    <p><a href="#">About</a></p>
-                    <p><a href="productsPage.php">Products</a></p>
-                    <p><a href="#">News</a></p>
-                    <p><a href="#">Contact</a></p>
-                    <p><a href="#">Marketplace</a></p>
-                </div>
-
-                <div class="col-12">
-                    <hr class="light-100">
-                    <h5>&copy; o2-heroku.herokuapp.com</h5>
-                </div>
-
-            </div>
-        </div>
-    </footer>
+    <?php include('footerComponent.php'); ?>
 
 </body>
 
