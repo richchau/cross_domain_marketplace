@@ -1,19 +1,30 @@
 <?php
 
 //session_start();
-$curl = curl_init();
-curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://www.annasys.com/cafe9/get-active-user-api.php",
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_TIMEOUT => 30,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => "GET",
-  CURLOPT_HTTPHEADER => array(
-    "cache-control: no-cache"
-  ),
-  // CURLOPT_SSL_VERIFYHOST => false,
-  // CURLOPT_SSL_VERIFYPEER => false,
-));
+// $curl = curl_init();
+// curl_setopt_array($curl, array(
+//   CURLOPT_URL => "https://www.annasys.com/cafe9/get-active-user-api.php",
+//   CURLOPT_RETURNTRANSFER => true,
+//   CURLOPT_TIMEOUT => 30,
+//   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+//   CURLOPT_CUSTOMREQUEST => "GET",
+//   CURLOPT_HTTPHEADER => array(
+//     "cache-control: no-cache"
+//   ),
+//   // CURLOPT_SSL_VERIFYHOST => false,
+//   // CURLOPT_SSL_VERIFYPEER => false,
+// ));
+
+//  Initiate curl
+$ch = curl_init();
+// Will return the response, if false it print the response
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+// Set the url
+curl_setopt($ch, CURLOPT_URL, "https://www.annasys.com/cafe9/get-active-user-api.php");
+// Execute
+// $result=curl_exec($ch);
+// // Closing
+// curl_close($ch);
 
 $response = curl_exec($curl);
 $err = curl_error($curl);
