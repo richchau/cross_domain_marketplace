@@ -27,9 +27,9 @@ curl_setopt_array($curl, array(
 
 $response = curl_exec($curl);
 $err = curl_error($curl);
+print(curl_getinfo($curl));
 curl_close($curl);
 $response = json_decode($response, true);
-
 var_dump($response);
 print_r($err);
 
