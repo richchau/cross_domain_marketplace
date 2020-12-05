@@ -30,7 +30,7 @@ $err = curl_error($curl);
 curl_close($curl);
 $response = json_decode($response, true);
 
-print_r($response);
+var_dump($response);
 print_r($err);
 
 echo '
