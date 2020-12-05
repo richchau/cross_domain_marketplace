@@ -48,7 +48,7 @@ IMPLEMENT POST REQUEST TO SEND DATA TO API
 // 'username=test&product_name=test&product_details_url=test&price=5&image_url=test&avg_rating=3');
 
 $ch = curl_init('http://potato-katie.com/api/user_visits/create.php');
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'username=' . $response . '&product_name=' . $products['name'] . '&product_details_url="https://o2-heroku.herokuapp.com/img/' . $products['image'] . '"&avg_rating=' . $products["product_rating"] . '');
+curl_setopt($ch, CURLOPT_POSTFIELDS, 'username=' . $response . '&product_name=' . $products['name'] . '&product_details_url="https://o2-heroku.herokuapp.com/detailPage.php?value=' . $products["product_id"] . '"&price=' . $products['pricing'] . '&image_url="https://o2-heroku.herokuapp.com/img/' . $products['image'] . '"&avg_rating=' . $products["product_rating"] . '');
 curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
 # Return response instead of printing.
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

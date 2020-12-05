@@ -19,17 +19,15 @@
 $curl = curl_init();
 //set parameters 
 curl_setopt_array($curl, array(
-  //expects a response 
   CURLOPT_RETURNTRANSFER => 1,
-  //get url 
-  CURLOPT_URL => 'https://www.annasys.com/cafe9/get-active-user-api.php'
+  CURLOPT_URL => 'https://www.annasys.com/cafe9/get-active-user-api.php',
+  CURLOPT_SSL_VERIFYHOST => false,
+  CURLOPT_SSL_VERIFYPEER => false
 ));
 
 $response = curl_exec($curl);
 $err = curl_error($curl);
-
 curl_close($curl);
-
 $response = json_decode($response, true);
 
 print_r($response);
