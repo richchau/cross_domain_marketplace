@@ -22,7 +22,8 @@ curl_close($curl);
 
 $response = json_decode($response, true);
 
-print($_POST['useruid']);
+print_r($response);
+print_r($err);
 
 echo '
 <!-- Navigation -->
