@@ -22,6 +22,7 @@ curl_close($curl);
 
 $response = json_decode($response, true);
 
+print('yes');
 print_r($response);
 print_r($err);
 
