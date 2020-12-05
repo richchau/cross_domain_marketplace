@@ -10,8 +10,8 @@ curl_setopt_array($curl, array(
     CURLOPT_HTTPHEADER => array(
         "cache-control: no-cache"
     ),
-    CURLOPT_SSL_VERIFYHOST => false,
-    CURLOPT_SSL_VERIFYPEER => false,
+    // CURLOPT_SSL_VERIFYHOST => false,
+    // CURLOPT_SSL_VERIFYPEER => false,
 ));
 
 $response = curl_exec($curl);
