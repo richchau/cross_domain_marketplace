@@ -1,18 +1,28 @@
 <?php
 
-//session_start();
+// //session_start();
+// $curl = curl_init();
+// curl_setopt_array($curl, array(
+//   CURLOPT_URL => "https://www.annasys.com/cafe9/get-active-user-api.php",
+//   CURLOPT_RETURNTRANSFER => true,
+//   CURLOPT_TIMEOUT => 30,
+//   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+//   CURLOPT_CUSTOMREQUEST => "GET",
+//   CURLOPT_HTTPHEADER => array(
+//     "cache-control: no-cache"
+//   ),
+//   CURLOPT_SSL_VERIFYHOST => false,
+//   CURLOPT_SSL_VERIFYPEER => false,
+// ));
+
+//initialize curl 
 $curl = curl_init();
+//set parameters 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://www.annasys.com/cafe9/get-active-user-api.php",
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_TIMEOUT => 30,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => "GET",
-  CURLOPT_HTTPHEADER => array(
-    "cache-control: no-cache"
-  ),
-  CURLOPT_SSL_VERIFYHOST => false,
-  CURLOPT_SSL_VERIFYPEER => false,
+  //expects a response 
+  CURLOPT_RETURNTRANSFER => 1,
+  //get url 
+  CURLOPT_URL => 'https://www.annasys.com/cafe9/get-active-user-api.php'
 ));
 
 $response = curl_exec($curl);
