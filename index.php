@@ -1,6 +1,3 @@
-<?php //include('start-session.php'); 
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +15,15 @@
 
 <body>
 
-  <?php include('navComponent.php') ?>
+
+
+  <?php 
+  
+  if(isset($_GET['name']){
+    echo 'logged in baby';
+  }
+  
+  include('navComponent.php') ?>
 
   <!-- Image Slider -->
   <div id="slides" class="carousel slide" data-ride="carousel">
