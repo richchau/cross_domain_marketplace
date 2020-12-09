@@ -18,11 +18,6 @@
 
 
   <?php
-
-  if (isset($_GET['name'])) {
-    echo 'logged in baby';
-  }
-
   include('navComponent.php') ?>
 
   <!-- Image Slider -->

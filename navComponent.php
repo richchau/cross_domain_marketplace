@@ -1,5 +1,4 @@
 <?php
-include('start-session.php');
 echo '
 <!-- Navigation -->
   <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
@@ -29,7 +28,7 @@ echo '
             <a href="http://potato-katie.com/marketplace.php" class="nav-link">Marketplace</a>
           </li>';
 
-if (isset($_GET["name"])) {
+if (isset($_COOKIE["name"])) {
   echo '<li class="nav-item">
                   <a href="includes/logout.inc.php" class="nav-link">lO<sup>2</sup>gout</a>
                  </li>';
