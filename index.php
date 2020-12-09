@@ -1,4 +1,5 @@
-<?php include('start-session.php'); ?>
+<?php //include('start-session.php'); 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
