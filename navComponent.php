@@ -1,38 +1,5 @@
 <?php
 
-// //session_start();
-// $curl = curl_init();
-// curl_setopt_array($curl, array(
-//   CURLOPT_URL => "https://www.annasys.com/cafe9/get-active-user-api.php",
-//   CURLOPT_RETURNTRANSFER => true,
-//   CURLOPT_TIMEOUT => 30,
-//   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-//   CURLOPT_CUSTOMREQUEST => "GET",
-//   CURLOPT_HTTPHEADER => array(
-//     "cache-control: no-cache"
-//   ),
-//   CURLOPT_SSL_VERIFYHOST => false,
-//   CURLOPT_SSL_VERIFYPEER => false,
-// ));
-
-//initialize curl 
-$curl = curl_init();
-//set parameters 
-curl_setopt_array($curl, array(
-  CURLOPT_RETURNTRANSFER => 1,
-  CURLOPT_URL => 'https://www.annasys.com/cafe9/get-active-user-api.php',
-  CURLOPT_SSL_VERIFYHOST => false,
-  CURLOPT_SSL_VERIFYPEER => false
-));
-
-$response = curl_exec($curl);
-$err = curl_error($curl);
-print(curl_getinfo($curl));
-curl_close($curl);
-$response = json_decode($response, true);
-var_dump($response);
-print_r($err);
-
 echo '
 <!-- Navigation -->
   <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
@@ -62,7 +29,7 @@ echo '
             <a href="http://potato-katie.com/marketplace.php" class="nav-link">Marketplace</a>
           </li>';
 
-if ($response) {
+if (isset($_GET["name"])) {
   echo '<li class="nav-item">
                   <a href="includes/logout.inc.php" class="nav-link">lO<sup>2</sup>gout</a>
                  </li>';

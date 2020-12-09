@@ -1,29 +1,4 @@
 <?php
-//Get username from api
-$curl = curl_init();
-curl_setopt_array($curl, array(
-    CURLOPT_URL => "https://www.annasys.com/cafe9/get-active-user-api.php",
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_TIMEOUT => 30,
-    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-    CURLOPT_CUSTOMREQUEST => "GET",
-    CURLOPT_HTTPHEADER => array(
-        "cache-control: no-cache"
-    ),
-    // CURLOPT_SSL_VERIFYHOST => false,
-    // CURLOPT_SSL_VERIFYPEER => false,
-));
-
-$response = curl_exec($curl);
-$err = curl_error($curl);
-
-curl_close($curl);
-
-$response = json_decode($response, true);
-
-?>
-
-<?php
 
 // Database configuration
 include("dbconfig.php");
@@ -41,22 +16,22 @@ $query1 = mysqli_query($conn, $sql1);
 $products = mysqli_fetch_assoc($query1);
 
 
-/*
-IMPLEMENT POST REQUEST TO SEND DATA TO API
-*/
-// curl_setopt($ch, CURLOPT_POSTFIELDS, 
-// 'username=test&product_name=test&product_details_url=test&price=5&image_url=test&avg_rating=3');
+// /*
+// IMPLEMENT POST REQUEST TO SEND DATA TO API
+// */
+// // curl_setopt($ch, CURLOPT_POSTFIELDS, 
+// // 'username=test&product_name=test&product_details_url=test&price=5&image_url=test&avg_rating=3');
 
-$ch = curl_init('http://potato-katie.com/api/user_visits/create.php');
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'username=' . $response . '&product_name=' . $products['name'] . '&product_details_url="https://o2-heroku.herokuapp.com/detailPage.php?value=' . $products["product_id"] . '"&price=' . $products['pricing'] . '&image_url="https://o2-heroku.herokuapp.com/img/' . $products['image'] . '"&avg_rating=' . $products["product_rating"] . '');
-curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-# Return response instead of printing.
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-# Send request.
-$chresult = curl_exec($ch);
-curl_close($ch);
-# Print response.
-//echo "<pre>$chresult</pre>";
+// $ch = curl_init('http://potato-katie.com/api/user_visits/create.php');
+// curl_setopt($ch, CURLOPT_POSTFIELDS, 'username=' . $response . '&product_name=' . $products['name'] . '&product_details_url="https://o2-heroku.herokuapp.com/detailPage.php?value=' . $products["product_id"] . '"&price=' . $products['pricing'] . '&image_url="https://o2-heroku.herokuapp.com/img/' . $products['image'] . '"&avg_rating=' . $products["product_rating"] . '');
+// curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+// # Return response instead of printing.
+// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+// # Send request.
+// $chresult = curl_exec($ch);
+// curl_close($ch);
+// # Print response.
+// //echo "<pre>$chresult</pre>";
 
 
 if (!isset($_COOKIE["viewed_products"])) {
