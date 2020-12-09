@@ -1,4 +1,5 @@
 <?php
-setcookie("name", "", time() - 3600);
-// header('location: ../index.php');
-// exit();
+unset($_COOKIE['name']);
+setcookie('name', null, -1, '/');
+header('location: ../index.php');
+exit();
