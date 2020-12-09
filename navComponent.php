@@ -1,5 +1,5 @@
 <?php
-
+include('start-session.php');
 echo '
 <!-- Navigation -->
   <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
