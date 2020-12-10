@@ -19,11 +19,20 @@ $products = mysqli_fetch_assoc($query1);
 //Sends to marketplace to track user visits
 if (isset($_COOKIE['name'])) {
     $ch = curl_init('http://potato-katie.com/api/user_visits/create.php');
-    curl_setopt($ch, CURLOPT_POSTFIELDS, 'username=' . $_COOKIE['name'] . '&product_name=' . $products['name'] . '&product_details_url="https://o2-heroku.herokuapp.com/detailPage.php?value=' . $products["product_id"] . '"&price=' . $products['pricing'] . '&image_url="https://o2-heroku.herokuapp.com/img/' . $products['image'] . '"&avg_rating=' . $products["product_rating"] . '');
+    // curl_setopt($ch, CURLOPT_POSTFIELDS, 'username=' . $_COOKIE['name'] . '&product_name=' . $products['name'] .
+    //     '&product_details_url="https://o2-heroku.herokuapp.com/detailPage.php?value=' . $products["product_id"] .
+    //     '"&price=' . $products['pricing'] . '&image_url="https://o2-heroku.herokuapp.com/img/' . $products['image'] .
+    //     '"&avg_rating=' . $products["product_rating"] . '');
+    curl_setopt($ch, CURLOPT_POSTFIELDS, [
+        'username' => $_COOKIE['name'], 'product_name' => $products['name'],
+        'product_details_url' => 'https://o2-heroku.herokuapp.com/detailPage.php?value=' . $products["product_id"],
+        'price' => $products['pricing'], 'image_url' => 'https://o2-heroku.herokuapp.com/img/' . $products['image'],
+        'avg_rating' => $products["product_rating"]
+    ]);
+
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-    # Return response instead of printing.
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    # Send request.
+
     $chresult = curl_exec($ch);
     curl_close($ch);
 }
