@@ -14,7 +14,7 @@ function url(){
 function content($url) {
     if ($url === "potato-katie.com") {
         return "<img style='position: absolute; margin: auto; top: 0;left: 0;right: 0;bottom: 0;' src=\"https://annasys.com/cafe9/potato.png\">";
-    }else if($url === "herokuapp.com") {
+    }else if($url === "o2-heroku.herokuapp.com") {
         return "<img style='position: absolute; margin: auto; top: 0;left: 0;right: 0;bottom: 0;' src=\"https://annasys.com/cafe9/oxy.png\">";
     }else if($url === "annasys.com") {
         return "<img style='position: absolute; margin: auto; top: 0;left: 0;right: 0;bottom: 0;' src=\"https://annasys.com/cafe9/cafe.png\">";
@@ -38,5 +38,3 @@ if(isset($_GET["name"])){
     }
 
 }
-
-?>
