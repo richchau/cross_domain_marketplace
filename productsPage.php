@@ -74,6 +74,42 @@
         </div>
     </div>
 
+    <!-- Top FIVE -->
+    <div class="container-fluid padding">
+        <div class="row welcome text-center">
+            <div class="col-12">
+                <h3>Top Products</h3>
+            </div>
+            <hr>
+        </div>
+    </div>
+
+    <!-- Top 5 Cards -->
+    <div class="container-fluid padding">
+        <div class="row product-list padding">
+            <?php
+
+            $sql = "SELECT * FROM products ORDER BY product_rating DESC LIMIT 5";
+            $query = mysqli_query($conn, $sql);
+
+            while ($row = mysqli_fetch_assoc($query)) {
+
+                echo '<div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="card">
+                          <img class="card-img-top" src="/img/' . $row["image"] . '">
+                          <div class="card-body">
+                            <h4 class="card-title">' . $row["name"] . ' </h4>' ?>
+                <?php displayStars($row['product_rating']) ?>
+            <?php echo '(' . $row["product_rating"] . ')' . '<p class="card-text">$' . $row["pricing"] . '</p>
+                            <a href="detailPage.php?value=' . $row["product_id"] . '" class="btn btn-outline-secondary">View Item</a>
+                          </div>
+                        </div>
+                      </div>';
+            }
+            ?>
+        </div>
+    </div>
+
     <?php include('footerComponent.php'); ?>
 
 </body>
