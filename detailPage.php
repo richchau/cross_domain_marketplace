@@ -247,7 +247,7 @@ if (isset($_POST['AddReview'])) {
         </div>
 
         <?php
-        include("recentlyViewed.php");
+        //include("recentlyViewed.php");
         ?>
 
 
